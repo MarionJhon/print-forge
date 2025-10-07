@@ -1,14 +1,15 @@
+import Image from "next/image";
+import HeroImageSquare from "@/public/hero-image-square.png";
 export default function AboutPage() {
   return (
     <main>
       <section className="container max-w-4xl px-4 py-8 mx-auto ">
         <div className="grid items-center gap-8 mb-12 md:grid-cols-2">
-          <div>
+          <div className="relative h-[300px] w-full">
             <img
-              className="relative h-[300px] w-full"
-              src="/hero-image-square.png"
+              src={HeroImageSquare.src}
               alt="PrintForge Community - A group of makers collaborating on 3D printing projects"
-              width={350}
+              className="absolute inset-0 w-full h-full object-cover rounded-lg"
             />
           </div>
           <div>
