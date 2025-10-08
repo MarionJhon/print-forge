@@ -29,3 +29,18 @@ export type PillProps = {
   children: ReactNode
   className?: string
 }
+
+export type Category = {
+  displayName: string
+  slug: string
+}
+
+export type CategoriesData = {
+  categories: Category[]
+}
+
+export type CategoryPageProps = {
+  params: Promise<{
+    categoryName: string
+  }>
+}
