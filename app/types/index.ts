@@ -1,4 +1,4 @@
-import type ReactNode from "react"
+import type {ReactNode} from "react"
 
 //Page type
 export type RootLayoutProps = Readonly<{
@@ -14,3 +14,18 @@ export type Model = {
   category: string;
   dateAdded: string;
 };
+
+export type ModelDetailProps = {
+  params: Promise<{
+    id: string
+  }>
+}
+
+export type ModelCardProps = {
+  model: Model
+}
+
+export type PillProps = {
+  children: ReactNode
+  className?: string
+}
