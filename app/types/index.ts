@@ -1,4 +1,4 @@
-import type {ReactNode} from "react"
+import type { ReactNode } from "react";
 
 //Page type
 export type RootLayoutProps = Readonly<{
@@ -15,32 +15,47 @@ export type Model = {
   dateAdded: string;
 };
 
+export type ModelGridProps = {
+  title: string;
+  models: Model[];
+};
+
+export type GetModelParams = {
+  category?: string;
+};
+
 export type ModelDetailProps = {
   params: Promise<{
-    id: string
-  }>
-}
+    id: string;
+  }>;
+};
 
 export type ModelCardProps = {
-  model: Model
-}
+  model: Model;
+};
 
 export type PillProps = {
-  children: ReactNode
-  className?: string
-}
+  children: ReactNode;
+  className?: string;
+};
 
 export type Category = {
-  displayName: string
-  slug: string
-}
+  displayName: string;
+  slug: string;
+};
 
 export type CategoriesData = {
-  categories: Category[]
-}
+  categories: Category[];
+};
 
 export type CategoryPageProps = {
   params: Promise<{
-    categoryName: string
-  }>
-}
+    categoryName: string;
+  }>;
+};
+
+export type NavLinkProps = {
+  href: string;
+  children: ReactNode;
+  isActive?: boolean;
+};
