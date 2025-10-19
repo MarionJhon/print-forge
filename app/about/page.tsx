@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroImageSquare from "@/public/hero-image-square.png";
 export default function AboutPage() {
   return (
