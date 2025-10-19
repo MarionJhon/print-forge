@@ -1,7 +1,11 @@
+"use client"
 import PrintForgeLogoIcon from "@/public/printforge-logo-icon.svg";
+import NavLink from "./NavLink";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import PrintForgeLogo from "@/public/printforge-logo.svg";
 export default function NavBar() {
+  const pathName = usePathname();
   return (
     <header className="w-full bg-white">
       <nav className="flex justify-between px-6 py-4">
@@ -19,13 +23,19 @@ export default function NavBar() {
             />
           </div>
         </Link>
-        <ul className="flex items-center gap-2.5">
-          <li className="transition duration-100 hover:text-[#F77429] border-[#F77429] hover:border-b-1">
-            <Link href="/3d-models">3D MODELS</Link>
-          </li>
-          <li className="transition duration-100 hover:text-[#F77429] border-[#F77429] hover:border-b-1">
-            <Link href="/about">ABOUT</Link>
-          </li>
+        <ul className="flex items-center gap-1.5">
+          <NavLink
+            href="/3d-models"
+            isActive={pathName.startsWith("/3d-models")}
+          >
+            3d Models
+          </NavLink>
+          <NavLink
+            href="/about"
+            isActive={pathName === "/about"}
+          >
+            About
+          </NavLink>
         </ul>
       </nav>
     </header>
