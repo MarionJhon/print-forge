@@ -1,5 +1,5 @@
 import HeroImage from "@/public/hero-image.png"
-
+import Image from "next/image";
 export default function Home() {
   return (
     <main>
@@ -21,7 +21,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <img src={HeroImage.src} alt="hero image" className="w-[350px] h-auto rounded-lg" />
+        <Image src={HeroImage.src} alt="hero image" width={350} height={350} className="rounded-lg" />
       </section>
     </main>
   );

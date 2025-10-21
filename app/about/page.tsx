@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HeroImageSquare from "@/public/hero-image-square.png";
 export default function AboutPage() {
   return (
@@ -5,10 +6,12 @@ export default function AboutPage() {
       <section className="container max-w-4xl px-4 py-8 mx-auto ">
         <div className="grid items-center gap-8 mb-12 md:grid-cols-2">
           <div className="relative h-[300px] w-full">
-            <img
+            <Image
+            width={400}
+            height={400}
               src={HeroImageSquare.src}
               alt="PrintForge Community - A group of makers collaborating on 3D printing projects"
-              className="absolute inset-0 w-full h-full object-cover rounded-lg"
+              className="absolute inset-0 object-cover rounded-lg"
             />
           </div>
           <div>
@@ -75,12 +78,12 @@ export default function AboutPage() {
             At PrintForge, we believe that 3D printing is revolutionizing the
             way we create, prototype, and manufacture. Our platform serves as a
             bridge between designers and makers, enabling the sharing of
-            knowledge and creativity that pushes the boundaries of what's
+            knowledge and creativity that pushes the boundaries of what&apos;s
             possible with 3D printing.
           </p>
           <hr className="my-2 w-1/4 border-t border-gray-400 mx-auto" />
           <p className="text-gray-700">
-            Whether you're a hobbyist looking for your next weekend project, an
+            Whether you&apos;re a hobbyist looking for your next weekend project, an
             educator seeking teaching materials, or a professional designer
             wanting to share your creations, PrintForge provides the tools and
             community to support your journey in 3D printing.

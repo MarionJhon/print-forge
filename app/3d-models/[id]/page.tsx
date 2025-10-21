@@ -1,4 +1,5 @@
 import type { ModelDetailProps } from "@/app/types";
+import Image from "next/image";
 import { getModelById } from "@/app/lib/models";
 import type { Model } from "@/app/types";
 import { FaRegHeart } from "react-icons/fa6";
@@ -7,13 +8,16 @@ import placeHolderImage from "@/public/hero-image-square.png";
 
 export default async function ModelDetailPage({ params }: ModelDetailProps) {
   const { id } = await params;
-  const modelId = await getModelById(id);
+  const modelId: Model = await getModelById(id);
 
   return (
     <div className="container max-w-6xl px-4 py-8 mx-auto">
       <article className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <figure className="relative overflow-hidden rounded-lg shadow-lg aspect-square">
-          <img src={placeHolderImage.src} alt={`3D model of ${modelId.name}`} />
+          <Image
+            src={placeHolderImage.src}
+            alt={`3D model of ${modelId.name}`}
+          />
         </figure>
         <section className="flex flex-col justify-center h-full">
           <div>

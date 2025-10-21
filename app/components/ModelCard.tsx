@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Pill from "./Pill";
 import { FaRegHeart } from "react-icons/fa6";
@@ -15,10 +16,12 @@ export default function ModelCard({ model }: ModelCardProps) {
         role="article"
       >
         <div className="relative aspect-square">
-          <img
+          <Image
+            width={300}
+            height={300}
             src={placeHolderImage.src}
             alt={model.name}
-            className="absolute insert-0 object-cover w-full h-full"
+            className="absolute insert-0 object-cover"
           />
         </div>
         <div className="p-4">

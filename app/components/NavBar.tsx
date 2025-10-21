@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import PrintForgeLogoIcon from "@/public/printforge-logo-icon.svg";
 import NavLink from "./NavLink";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import PrintForgeLogo from "@/public/printforge-logo.svg";
@@ -11,13 +12,17 @@ export default function NavBar() {
       <nav className="flex justify-between px-6 py-4">
         <Link href="/">
           <div className="relative">
-            <img
-              className="w-[200px] h-auto hidden md:block"
+            <Image
+              width={200}
+              height={200}
+              className="hidden md:block"
               src={PrintForgeLogo.src}
               alt="Desktop logo"
             />
-            <img
-              className="w-[40px] h-auto block md:hidden"
+            <Image
+              width={40}
+              height={40}
+              className="block md:hidden"
               src={PrintForgeLogoIcon.src}
               alt="Mobile logo"
             />
@@ -30,10 +35,7 @@ export default function NavBar() {
           >
             3d Models
           </NavLink>
-          <NavLink
-            href="/about"
-            isActive={pathName === "/about"}
-          >
+          <NavLink href="/about" isActive={pathName === "/about"}>
             About
           </NavLink>
         </ul>
