@@ -34,6 +34,12 @@ export type ModelCardProps = {
   model: Model;
 };
 
+export type ModelPageProps = {
+  searchParams: Promise<{
+    query?: string
+  }>
+};
+
 export type PillProps = {
   children: ReactNode;
   className?: string;
